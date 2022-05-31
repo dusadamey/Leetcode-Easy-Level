@@ -1,0 +1,23 @@
+Problem: 
+The problem is to find the middle of the linked list. 
+If the size of a linked list is even, second element should be chosen as middle.
+
+Approach:
+We have taken the fast and slow pointer approach to solve this problem. 
+The time fast pointer reaches the end of the Linked List, slow pointer will reach exactly at the middle. Thus, we'll get our answer.
+
+Program in Pytho3:
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        f = s = head
+        while f and f.next is not None:
+            f = f.next.next
+            s = s.next
+        
+        return s
